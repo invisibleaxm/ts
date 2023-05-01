@@ -1,9 +1,11 @@
 // See https://containers.dev/implementors/json_reference/ for configuration reference
 {
 	"name": "ACME Order Service",
-	"build": {
-		"dockerfile": "Dockerfile"
-	},
+	"dockerComposeFile" :  [
+		"docker-compose.yml"
+	],
+	"service": "devcontainer",
+	"workspaceFolder": "/src",
 	"customizations": {
 		"vscode": {
 			"extensions": [
@@ -18,6 +20,7 @@
 		}
 	},
 	"remoteUser": "node",
+	"shutdownAction": "stopCompose",
 	"features": {
 		"ghcr.io/devcontainers/features/git:1": {}
 	}
